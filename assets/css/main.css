@@ -3588,15 +3588,18 @@ body:not(.is-touch) .tiles article:hover > .image:after { opacity: 0; }
 
 /* Slideshow stílusok */
 #slideshow {
-    width: 100%;
-    margin: 2em 0;
+    width: 90%; /* Kicsit keskenyebb, hogy ne érjen a széléig */
+    margin: 2em auto; /* Középre igazítás */
     overflow: hidden;
+    border: 2px solid #000000; /* Fekete keret */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék */
 }
 
 .slideshow-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 arány alapértelmezett, de képfüggő lehet */
+    padding-bottom: 30.25%; /* Alapértelmezett PC-n, laposabb arány */
     height: 0; /* A padding-bottom tartja az arányt */
 }
 
@@ -3629,31 +3632,13 @@ body:not(.is-touch) .tiles article:hover > .image:after { opacity: 0; }
 /* Reszponzív finomhangolás kisebb képernyőkre */
 @media screen and (max-width: 736px) {
     .slideshow-container {
-        padding-bottom: 75%; /* Mobilon magasabb arány, ha kell */
+        padding-bottom: 56.25%; /* 16:9 arány mobilon, hogy nagyobb legyen */
     }
 }
 
 @media screen and (max-width: 480px) {
     .slideshow-container {
-        padding-bottom: 100%; /* Nagyon kicsi képernyőn még magasabb */
+        padding-bottom: 75%; /* Még nagyobb arány nagyon kicsi képernyőkön */
     }
 }
-
-#slideshow {
-    width: 90%; /* Kicsit keskenyebb, hogy ne érjen a széléig */
-    margin: 2em auto; /* Középre igazítás */
-    overflow: hidden;
-    border: 2px solid #000000; /* Fehér keret, vagy HSC színekhez igazítva */
-    border-radius: 10px; /* Lekerekített sarkok */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék */
-}
-
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 30.25%; /* 16:9 arány */
-    height: 0;
-}
-
-
 
